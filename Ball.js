@@ -5,7 +5,7 @@ class Ball{
 		this.y = y
 		this.c = color(random(255),random(255),random(255))
 		this.d = d
-		this.speed = 3
+		this.speed = 5
 		this.dirX = this.direction()
 		this.dirY = this.direction()
 		this.balls = balls
@@ -19,6 +19,7 @@ class Ball{
 		ellipse(this.x, this.y, this.d)
 		pop()
 
+		this.move()
 		this.bounce()
 
 	}
