@@ -31,49 +31,14 @@ function draw() {
 	for(let i=0 ; i < balls.length; i++){
 		balls[i].draw()
 		balls[i].move()
-
-		if(i != 0){
-			//console.log(balls[i-1].x)
-			dx = balls[i].x - balls[i-1].x
-			dy = balls[i].y - balls[i-1].y
-			distance = Math.sqrt(dx * dx + dy * dy)
-
-			if (distance < balls[i].d + balls[i-1].d) {
-			    console.log("colision")
-			}
-			
-		}
-
-
 	}
 
 }
 
-function keyPressed(){
 
-	//movimiento 
-	switch(keyCode){
-
-		case UP_ARROW:
-				p2.moveUp() 
-			break;
-
-		case DOWN_ARROW:
-				p2.moveDown() 
-			break;
-		case 87:
-				p1.moveUp() 
-			break;
-		case 83:
-				p1.moveDown() 
-			break;
-
-	}
-}
 
 function mousePressed(){
-	//crear una nueva ball y añadirlo al array
-	ball = new Ball(mouseX, mouseY, 35)
+	//crear una nueva ball y añadirlo al array(envia array con todas las balls)
+	ball = new Ball(mouseX, mouseY, 40, this.balls)
 	balls.push(ball)
-
 }
